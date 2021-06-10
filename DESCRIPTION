@@ -7,7 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "dewey.dunnington@dfo-mpo.gc.ca",
            comment = c(ORCID = "0000-0002-9415-4582"))
-Description: What the package does (one paragraph).
+Description: A complete, zero-dependenchy port of the TEOS-10
+  seawater functions.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
