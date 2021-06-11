@@ -98,7 +98,10 @@ fun_wrap_doubles_r <- function(name, arg_names, ...) {
 }
 
 impl_doubles <- functions %>%
-  filter(name == "gsw_alpha") %>%
+  filter(
+    return_type == "double",
+    map_lgl(arg_types, ~all(. == "double"))
+  ) %>%
   mutate(
     c_impl = pmap_chr(., fun_wrap_doubles_c),
     r_impl = pmap_chr(., fun_wrap_doubles_r)

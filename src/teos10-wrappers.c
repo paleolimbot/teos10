@@ -4,6 +4,39 @@
 #include <Rinternals.h>
 #include "gswteos-10.h"
 
+SEXP teos10_c_gsw_adiabatic_lapse_rate_from_ct_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_adiabatic_lapse_rate_from_ct(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_adiabatic_lapse_rate_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_adiabatic_lapse_rate_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
 SEXP teos10_c_gsw_alpha_wrap(SEXP sa, SEXP ct, SEXP p) {
     R_xlen_t size = Rf_xlength(sa);
     SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
@@ -15,6 +48,2023 @@ SEXP teos10_c_gsw_alpha_wrap(SEXP sa, SEXP ct, SEXP p) {
 
     for (R_xlen_t i = 0; i < size; i++) {
         out_ptr[i] = gsw_alpha(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_alpha_on_beta_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_alpha_on_beta(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_alpha_wrt_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_alpha_wrt_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_alpha_wrt_t_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_alpha_wrt_t_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_beta_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_beta(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_beta_const_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_beta_const_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_c_from_sp_wrap(SEXP sp, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sp);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sp_ptr = REAL(sp);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_c_from_sp(sp_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_cabbeling_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_cabbeling(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_chem_potential_water_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_chem_potential_water_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_chem_potential_water_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_chem_potential_water_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_cp_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_cp_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_cp_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_cp_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_freezing_wrap(SEXP sa, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_freezing(sa_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_freezing_poly_wrap(SEXP sa, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_freezing_poly(sa_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_from_enthalpy_wrap(SEXP sa, SEXP h, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* h_ptr = REAL(h);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_from_enthalpy(sa_ptr[i], h_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_from_enthalpy_exact_wrap(SEXP sa, SEXP h, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* h_ptr = REAL(h);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_from_enthalpy_exact(sa_ptr[i], h_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_from_entropy_wrap(SEXP sa, SEXP entropy) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* entropy_ptr = REAL(entropy);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_from_entropy(sa_ptr[i], entropy_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_from_pt_wrap(SEXP sa, SEXP pt) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* pt_ptr = REAL(pt);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_from_pt(sa_ptr[i], pt_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_from_t_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_from_t(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_ct_maxdensity_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_ct_maxdensity(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_deltasa_atlas_wrap(SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(p);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_deltasa_atlas(p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_deltasa_from_sp_wrap(SEXP sp, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sp);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sp_ptr = REAL(sp);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_deltasa_from_sp(sp_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_dilution_coefficient_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_dilution_coefficient_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_dynamic_enthalpy_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_dynamic_enthalpy(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_enthalpy_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_enthalpy(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_enthalpy_ct_exact_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_enthalpy_ct_exact(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_enthalpy_diff_wrap(SEXP sa, SEXP ct, SEXP p_shallow, SEXP p_deep) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_shallow_ptr = REAL(p_shallow);
+    double* p_deep_ptr = REAL(p_deep);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_enthalpy_diff(sa_ptr[i], ct_ptr[i], p_shallow_ptr[i], p_deep_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_enthalpy_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_enthalpy_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_enthalpy_sso_0_wrap(SEXP p) {
+    R_xlen_t size = Rf_xlength(p);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_enthalpy_sso_0(p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_enthalpy_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_enthalpy_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_entropy_from_ct_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_entropy_from_ct(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_entropy_from_pt_wrap(SEXP sa, SEXP pt) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* pt_ptr = REAL(pt);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_entropy_from_pt(sa_ptr[i], pt_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_entropy_from_t_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_entropy_from_t(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_entropy_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_entropy_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_entropy_part_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_entropy_part(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_entropy_part_zerop_wrap(SEXP sa, SEXP pt0) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* pt0_ptr = REAL(pt0);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_entropy_part_zerop(sa_ptr[i], pt0_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_fdelta_wrap(SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(p);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_fdelta(p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_gibbs_ice_part_t_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_gibbs_ice_part_t(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_gibbs_ice_pt0_wrap(SEXP pt0) {
+    R_xlen_t size = Rf_xlength(pt0);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pt0_ptr = REAL(pt0);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_gibbs_ice_pt0(pt0_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_gibbs_ice_pt0_pt0_wrap(SEXP pt0) {
+    R_xlen_t size = Rf_xlength(pt0);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pt0_ptr = REAL(pt0);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_gibbs_ice_pt0_pt0(pt0_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_gibbs_pt0_pt0_wrap(SEXP sa, SEXP pt0) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* pt0_ptr = REAL(pt0);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_gibbs_pt0_pt0(sa_ptr[i], pt0_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_grav_wrap(SEXP lat, SEXP p) {
+    R_xlen_t size = Rf_xlength(lat);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* lat_ptr = REAL(lat);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_grav(lat_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_helmholtz_energy_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_helmholtz_energy_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_hill_ratio_at_sp2_wrap(SEXP t) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_hill_ratio_at_sp2(t_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_internal_energy_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_internal_energy(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_internal_energy_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_internal_energy_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_kappa_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_kappa(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_kappa_const_t_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_kappa_const_t_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_kappa_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_kappa_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_kappa_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_kappa_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_latentheat_evap_ct_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_latentheat_evap_ct(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_latentheat_evap_t_wrap(SEXP sa, SEXP t) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_latentheat_evap_t(sa_ptr[i], t_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_latentheat_melting_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_latentheat_melting(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_ice_equilibrium_sa_ct_ratio_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_ice_equilibrium_sa_ct_ratio(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_ice_equilibrium_sa_ct_ratio_poly_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_ice_equilibrium_sa_ct_ratio_poly(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_ice_sa_ct_ratio_wrap(SEXP sa, SEXP ct, SEXP p, SEXP t_ih) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+    double* t_ih_ptr = REAL(t_ih);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_ice_sa_ct_ratio(sa_ptr[i], ct_ptr[i], p_ptr[i], t_ih_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_ice_sa_ct_ratio_poly_wrap(SEXP sa, SEXP ct, SEXP p, SEXP t_ih) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+    double* t_ih_ptr = REAL(t_ih);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_ice_sa_ct_ratio_poly(sa_ptr[i], ct_ptr[i], p_ptr[i], t_ih_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_seaice_equilibrium_sa_ct_ratio_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_seaice_equilibrium_sa_ct_ratio(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_seaice_equilibrium_sa_ct_ratio_poly_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_seaice_equilibrium_sa_ct_ratio_poly(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_seaice_sa_ct_ratio_wrap(SEXP sa, SEXP ct, SEXP p, SEXP sa_seaice, SEXP t_seaice) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+    double* sa_seaice_ptr = REAL(sa_seaice);
+    double* t_seaice_ptr = REAL(t_seaice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_seaice_sa_ct_ratio(sa_ptr[i], ct_ptr[i], p_ptr[i], sa_seaice_ptr[i], t_seaice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_melting_seaice_sa_ct_ratio_poly_wrap(SEXP sa, SEXP ct, SEXP p, SEXP sa_seaice, SEXP t_seaice) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+    double* sa_seaice_ptr = REAL(sa_seaice);
+    double* t_seaice_ptr = REAL(t_seaice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_melting_seaice_sa_ct_ratio_poly(sa_ptr[i], ct_ptr[i], p_ptr[i], sa_seaice_ptr[i], t_seaice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_p_from_z_wrap(SEXP z, SEXP lat) {
+    R_xlen_t size = Rf_xlength(z);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* z_ptr = REAL(z);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_p_from_z(z_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pot_enthalpy_from_pt_ice_wrap(SEXP pt0_ice) {
+    R_xlen_t size = Rf_xlength(pt0_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pt0_ice_ptr = REAL(pt0_ice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pot_enthalpy_from_pt_ice(pt0_ice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pot_enthalpy_from_pt_ice_poly_wrap(SEXP pt0_ice) {
+    R_xlen_t size = Rf_xlength(pt0_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pt0_ice_ptr = REAL(pt0_ice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pot_enthalpy_from_pt_ice_poly(pt0_ice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pot_enthalpy_ice_freezing_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pot_enthalpy_ice_freezing(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pot_enthalpy_ice_freezing_poly_wrap(SEXP sa, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pot_enthalpy_ice_freezing_poly(sa_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pot_rho_t_exact_wrap(SEXP sa, SEXP t, SEXP p, SEXP p_ref) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+    double* p_ref_ptr = REAL(p_ref);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pot_rho_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i], p_ref_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pressure_coefficient_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pressure_coefficient_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pressure_freezing_ct_wrap(SEXP sa, SEXP ct, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pressure_freezing_ct(sa_ptr[i], ct_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_ct_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_ct(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_entropy_wrap(SEXP sa, SEXP entropy) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* entropy_ptr = REAL(entropy);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_entropy(sa_ptr[i], entropy_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_pot_enthalpy_ice_wrap(SEXP pot_enthalpy_ice) {
+    R_xlen_t size = Rf_xlength(pot_enthalpy_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pot_enthalpy_ice_ptr = REAL(pot_enthalpy_ice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_pot_enthalpy_ice(pot_enthalpy_ice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_pot_enthalpy_ice_poly_wrap(SEXP pot_enthalpy_ice) {
+    R_xlen_t size = Rf_xlength(pot_enthalpy_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pot_enthalpy_ice_ptr = REAL(pot_enthalpy_ice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_pot_enthalpy_ice_poly(pot_enthalpy_ice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_pot_enthalpy_ice_poly_dh_wrap(SEXP pot_enthalpy_ice) {
+    R_xlen_t size = Rf_xlength(pot_enthalpy_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pot_enthalpy_ice_ptr = REAL(pot_enthalpy_ice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_pot_enthalpy_ice_poly_dh(pot_enthalpy_ice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_t_wrap(SEXP sa, SEXP t, SEXP p, SEXP p_ref) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+    double* p_ref_ptr = REAL(p_ref);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_t(sa_ptr[i], t_ptr[i], p_ptr[i], p_ref_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt_from_t_ice_wrap(SEXP t, SEXP p, SEXP p_ref) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+    double* p_ref_ptr = REAL(p_ref);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt_from_t_ice(t_ptr[i], p_ptr[i], p_ref_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt0_cold_ice_poly_wrap(SEXP pot_enthalpy_ice) {
+    R_xlen_t size = Rf_xlength(pot_enthalpy_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pot_enthalpy_ice_ptr = REAL(pot_enthalpy_ice);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt0_cold_ice_poly(pot_enthalpy_ice_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt0_from_t_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt0_from_t(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_pt0_from_t_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_pt0_from_t_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_rho_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_rho(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_rho_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_rho_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_rho_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_rho_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_freezing_from_ct_wrap(SEXP ct, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(ct);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_freezing_from_ct(ct_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_freezing_from_ct_poly_wrap(SEXP ct, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(ct);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_freezing_from_ct_poly(ct_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_freezing_from_t_wrap(SEXP t, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_freezing_from_t(t_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_freezing_from_t_poly_wrap(SEXP t, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_freezing_from_t_poly(t_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_from_rho_wrap(SEXP rho, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(rho);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* rho_ptr = REAL(rho);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_from_rho(rho_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_from_sp_wrap(SEXP sp, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sp);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sp_ptr = REAL(sp);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_from_sp(sp_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_from_sp_baltic_wrap(SEXP sp, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sp);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sp_ptr = REAL(sp);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_from_sp_baltic(sp_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sa_from_sstar_wrap(SEXP sstar, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sstar);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sstar_ptr = REAL(sstar);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sa_from_sstar(sstar_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_saar_wrap(SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(p);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_saar(p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sigma0_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sigma0(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sigma1_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sigma1(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sigma2_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sigma2(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sigma3_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sigma3(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sigma4_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sigma4(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sound_speed_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sound_speed(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sound_speed_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sound_speed_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sound_speed_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sound_speed_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sp_from_c_wrap(SEXP c, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(c);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* c_ptr = REAL(c);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sp_from_c(c_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sp_from_sa_wrap(SEXP sa, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sp_from_sa(sa_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sp_from_sa_baltic_wrap(SEXP sa, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sp_from_sa_baltic(sa_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sp_from_sk_wrap(SEXP sk) {
+    R_xlen_t size = Rf_xlength(sk);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sk_ptr = REAL(sk);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sp_from_sk(sk_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sp_from_sr_wrap(SEXP sr) {
+    R_xlen_t size = Rf_xlength(sr);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sr_ptr = REAL(sr);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sp_from_sr(sr_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sp_from_sstar_wrap(SEXP sstar, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sstar);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sstar_ptr = REAL(sstar);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sp_from_sstar(sstar_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_specvol_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_specvol(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_specvol_anom_standard_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_specvol_anom_standard(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_specvol_ice_wrap(SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(t);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_specvol_ice(t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_specvol_sso_0_wrap(SEXP p) {
+    R_xlen_t size = Rf_xlength(p);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_specvol_sso_0(p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_specvol_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_specvol_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_spiciness0_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_spiciness0(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_spiciness1_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_spiciness1(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_spiciness2_wrap(SEXP sa, SEXP ct) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_spiciness2(sa_ptr[i], ct_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sr_from_sp_wrap(SEXP sp) {
+    R_xlen_t size = Rf_xlength(sp);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sp_ptr = REAL(sp);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sr_from_sp(sp_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sstar_from_sa_wrap(SEXP sa, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sstar_from_sa(sa_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_sstar_from_sp_wrap(SEXP sp, SEXP p, SEXP lon, SEXP lat) {
+    R_xlen_t size = Rf_xlength(sp);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sp_ptr = REAL(sp);
+    double* p_ptr = REAL(p);
+    double* lon_ptr = REAL(lon);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_sstar_from_sp(sp_ptr[i], p_ptr[i], lon_ptr[i], lat_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_t_deriv_chem_potential_water_t_exact_wrap(SEXP sa, SEXP t, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* t_ptr = REAL(t);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_t_deriv_chem_potential_water_t_exact(sa_ptr[i], t_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_t_freezing_wrap(SEXP sa, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_t_freezing(sa_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_t_freezing_poly_wrap(SEXP sa, SEXP p, SEXP saturation_fraction) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* p_ptr = REAL(p);
+    double* saturation_fraction_ptr = REAL(saturation_fraction);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_t_freezing_poly(sa_ptr[i], p_ptr[i], saturation_fraction_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_t_from_ct_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_t_from_ct(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_t_from_pt0_ice_wrap(SEXP pt0_ice, SEXP p) {
+    R_xlen_t size = Rf_xlength(pt0_ice);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* pt0_ice_ptr = REAL(pt0_ice);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_t_from_pt0_ice(pt0_ice_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_thermobaric_wrap(SEXP sa, SEXP ct, SEXP p) {
+    R_xlen_t size = Rf_xlength(sa);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* sa_ptr = REAL(sa);
+    double* ct_ptr = REAL(ct);
+    double* p_ptr = REAL(p);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_thermobaric(sa_ptr[i], ct_ptr[i], p_ptr[i]);
+    }
+
+    UNPROTECT(1);
+    return out;
+}
+
+SEXP teos10_c_gsw_z_from_p_wrap(SEXP p, SEXP lat) {
+    R_xlen_t size = Rf_xlength(p);
+    SEXP out = PROTECT(Rf_allocVector(REALSXP, size));
+    double* out_ptr = REAL(out);
+
+    double* p_ptr = REAL(p);
+    double* lat_ptr = REAL(lat);
+
+    for (R_xlen_t i = 0; i < size; i++) {
+        out_ptr[i] = gsw_z_from_p(p_ptr[i], lat_ptr[i]);
     }
 
     UNPROTECT(1);
