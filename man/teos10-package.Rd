@@ -9,6 +9,14 @@
 A complete, zero-dependenchy port of the TEOS-10
   seawater functions.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/paleolimbot/teos10}
+  \item Report bugs at \url{https://github.com/paleolimbot/teos10/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Dewey Dunnington \email{dewey.dunnington@dfo-mpo.gc.ca} (\href{https://orcid.org/0000-0002-9415-4582}{ORCID})
 
