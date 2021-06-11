@@ -1,0 +1,27 @@
+arg_name,arg_doc
+sa,Absolute Salinity [ g/kg ]
+ct,Conservative Temperature [deg C]
+p,sea pressure [ dbar ]
+t, in-situ temperature (ITS-90) [ deg C ]
+sp,Practical Salinity [ unitless ]
+saturation_fraction,the saturation fraction of dissolved air in seawater
+h, specific enthalpy [ J/kg ]
+entropy,specific entropy [ deg C ]
+pt,potential temperature with reference pressure of 0 dbar [ deg C ]
+lon,longitude [ deg E ]
+lat,latitude [ deg N ]
+p_shallow,upper sea pressure (i.e. shallower absolute pressure - 10.1325 dbar) [ dbar ]
+p_deep,lower sea pressure (i.e. deeper absolute pressure - 10.1325 dbar) [ dbar ]
+pt0,insitu temperature [ deg C ]
+t_ih,in-situ temperature of the ice at pressure p (ITS-90) [ deg C ]
+sa_seaice,"Absolute Salinity of sea ice, that is, the mass fraction of salt in sea ice, expressed in g of salt per kg of sea ice. [ g/kg ]"
+t_seaice,the in-situ temperature of the sea ice (or ice) (ITS-90) [ deg C ]
+z,height [ m ]
+pt0_ice,potential temperature of ice (ITS-90) [ deg C ]
+p_ref,reference sea pressure [ dbar ]
+pot_enthalpy_ice,potential enthalpy of ice [ J/kg ]
+rho,in-situ density	[ kg/m ]
+sstar,Preformed Salinity [ g/kg ]
+c,conductivity [ mS/cm ]
+sk,"Knudsen Salinity [ parts per thousand, ppt ]"
+sr, Reference Salinity [ g/kg ]

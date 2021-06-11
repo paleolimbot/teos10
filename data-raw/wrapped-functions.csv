@@ -1,0 +1,126 @@
+name,return_type,arg_names,arg_types
+gsw_adiabatic_lapse_rate_from_ct,double,sa; ct; p,double; double; double
+gsw_adiabatic_lapse_rate_ice,double,t; p,double; double
+gsw_alpha,double,sa; ct; p,double; double; double
+gsw_alpha_on_beta,double,sa; ct; p,double; double; double
+gsw_alpha_wrt_t_exact,double,sa; t; p,double; double; double
+gsw_alpha_wrt_t_ice,double,t; p,double; double
+gsw_beta,double,sa; ct; p,double; double; double
+gsw_beta_const_t_exact,double,sa; t; p,double; double; double
+gsw_c_from_sp,double,sp; t; p,double; double; double
+gsw_cabbeling,double,sa; ct; p,double; double; double
+gsw_chem_potential_water_ice,double,t; p,double; double
+gsw_chem_potential_water_t_exact,double,sa; t; p,double; double; double
+gsw_cp_ice,double,t; p,double; double
+gsw_cp_t_exact,double,sa; t; p,double; double; double
+gsw_ct_freezing,double,sa; p; saturation_fraction,double; double; double
+gsw_ct_freezing_poly,double,sa; p; saturation_fraction,double; double; double
+gsw_ct_from_enthalpy,double,sa; h; p,double; double; double
+gsw_ct_from_enthalpy_exact,double,sa; h; p,double; double; double
+gsw_ct_from_entropy,double,sa; entropy,double; double
+gsw_ct_from_pt,double,sa; pt,double; double
+gsw_ct_from_t,double,sa; t; p,double; double; double
+gsw_ct_maxdensity,double,sa; p,double; double
+gsw_deltasa_atlas,double,p; lon; lat,double; double; double
+gsw_deltasa_from_sp,double,sp; p; lon; lat,double; double; double; double
+gsw_dilution_coefficient_t_exact,double,sa; t; p,double; double; double
+gsw_dynamic_enthalpy,double,sa; ct; p,double; double; double
+gsw_enthalpy,double,sa; ct; p,double; double; double
+gsw_enthalpy_ct_exact,double,sa; ct; p,double; double; double
+gsw_enthalpy_diff,double,sa; ct; p_shallow; p_deep,double; double; double; double
+gsw_enthalpy_ice,double,t; p,double; double
+gsw_enthalpy_sso_0,double,p,double
+gsw_enthalpy_t_exact,double,sa; t; p,double; double; double
+gsw_entropy_from_ct,double,sa; ct,double; double
+gsw_entropy_from_pt,double,sa; pt,double; double
+gsw_entropy_from_t,double,sa; t; p,double; double; double
+gsw_entropy_ice,double,t; p,double; double
+gsw_entropy_part,double,sa; t; p,double; double; double
+gsw_entropy_part_zerop,double,sa; pt0,double; double
+gsw_fdelta,double,p; lon; lat,double; double; double
+gsw_gibbs_ice_part_t,double,t; p,double; double
+gsw_gibbs_ice_pt0,double,pt0,double
+gsw_gibbs_ice_pt0_pt0,double,pt0,double
+gsw_gibbs_pt0_pt0,double,sa; pt0,double; double
+gsw_grav,double,lat; p,double; double
+gsw_helmholtz_energy_ice,double,t; p,double; double
+gsw_hill_ratio_at_sp2,double,t,double
+gsw_internal_energy,double,sa; ct; p,double; double; double
+gsw_internal_energy_ice,double,t; p,double; double
+gsw_kappa,double,sa; ct; p,double; double; double
+gsw_kappa_const_t_ice,double,t; p,double; double
+gsw_kappa_ice,double,t; p,double; double
+gsw_kappa_t_exact,double,sa; t; p,double; double; double
+gsw_latentheat_evap_ct,double,sa; ct,double; double
+gsw_latentheat_evap_t,double,sa; t,double; double
+gsw_latentheat_melting,double,sa; p,double; double
+gsw_melting_ice_equilibrium_sa_ct_ratio,double,sa; p,double; double
+gsw_melting_ice_equilibrium_sa_ct_ratio_poly,double,sa; p,double; double
+gsw_melting_ice_sa_ct_ratio,double,sa; ct; p; t_ih,double; double; double; double
+gsw_melting_ice_sa_ct_ratio_poly,double,sa; ct; p; t_ih,double; double; double; double
+gsw_melting_seaice_equilibrium_sa_ct_ratio,double,sa; p,double; double
+gsw_melting_seaice_equilibrium_sa_ct_ratio_poly,double,sa; p,double; double
+gsw_melting_seaice_sa_ct_ratio,double,sa; ct; p; sa_seaice; t_seaice,double; double; double; double; double
+gsw_melting_seaice_sa_ct_ratio_poly,double,sa; ct; p; sa_seaice; t_seaice,double; double; double; double; double
+gsw_p_from_z,double,z; lat,double; double
+gsw_pot_enthalpy_from_pt_ice,double,pt0_ice,double
+gsw_pot_enthalpy_from_pt_ice_poly,double,pt0_ice,double
+gsw_pot_enthalpy_ice_freezing,double,sa; p,double; double
+gsw_pot_enthalpy_ice_freezing_poly,double,sa; p,double; double
+gsw_pot_rho_t_exact,double,sa; t; p; p_ref,double; double; double; double
+gsw_pressure_coefficient_ice,double,t; p,double; double
+gsw_pressure_freezing_ct,double,sa; ct; saturation_fraction,double; double; double
+gsw_pt_from_ct,double,sa; ct,double; double
+gsw_pt_from_entropy,double,sa; entropy,double; double
+gsw_pt_from_pot_enthalpy_ice,double,pot_enthalpy_ice,double
+gsw_pt_from_pot_enthalpy_ice_poly,double,pot_enthalpy_ice,double
+gsw_pt_from_pot_enthalpy_ice_poly_dh,double,pot_enthalpy_ice,double
+gsw_pt_from_t,double,sa; t; p; p_ref,double; double; double; double
+gsw_pt_from_t_ice,double,t; p; p_ref,double; double; double
+gsw_pt0_cold_ice_poly,double,pot_enthalpy_ice,double
+gsw_pt0_from_t,double,sa; t; p,double; double; double
+gsw_pt0_from_t_ice,double,t; p,double; double
+gsw_rho,double,sa; ct; p,double; double; double
+gsw_rho_ice,double,t; p,double; double
+gsw_rho_t_exact,double,sa; t; p,double; double; double
+gsw_sa_freezing_from_ct,double,ct; p; saturation_fraction,double; double; double
+gsw_sa_freezing_from_ct_poly,double,ct; p; saturation_fraction,double; double; double
+gsw_sa_freezing_from_t,double,t; p; saturation_fraction,double; double; double
+gsw_sa_freezing_from_t_poly,double,t; p; saturation_fraction,double; double; double
+gsw_sa_from_rho,double,rho; ct; p,double; double; double
+gsw_sa_from_sp,double,sp; p; lon; lat,double; double; double; double
+gsw_sa_from_sp_baltic,double,sp; lon; lat,double; double; double
+gsw_sa_from_sstar,double,sstar; p; lon; lat,double; double; double; double
+gsw_saar,double,p; lon; lat,double; double; double
+gsw_sigma0,double,sa; ct,double; double
+gsw_sigma1,double,sa; ct,double; double
+gsw_sigma2,double,sa; ct,double; double
+gsw_sigma3,double,sa; ct,double; double
+gsw_sigma4,double,sa; ct,double; double
+gsw_sound_speed,double,sa; ct; p,double; double; double
+gsw_sound_speed_ice,double,t; p,double; double
+gsw_sound_speed_t_exact,double,sa; t; p,double; double; double
+gsw_sp_from_c,double,c; t; p,double; double; double
+gsw_sp_from_sa,double,sa; p; lon; lat,double; double; double; double
+gsw_sp_from_sa_baltic,double,sa; lon; lat,double; double; double
+gsw_sp_from_sk,double,sk,double
+gsw_sp_from_sr,double,sr,double
+gsw_sp_from_sstar,double,sstar; p; lon; lat,double; double; double; double
+gsw_specvol,double,sa; ct; p,double; double; double
+gsw_specvol_anom_standard,double,sa; ct; p,double; double; double
+gsw_specvol_ice,double,t; p,double; double
+gsw_specvol_sso_0,double,p,double
+gsw_specvol_t_exact,double,sa; t; p,double; double; double
+gsw_spiciness0,double,sa; ct,double; double
+gsw_spiciness1,double,sa; ct,double; double
+gsw_spiciness2,double,sa; ct,double; double
+gsw_sr_from_sp,double,sp,double
+gsw_sstar_from_sa,double,sa; p; lon; lat,double; double; double; double
+gsw_sstar_from_sp,double,sp; p; lon; lat,double; double; double; double
+gsw_t_deriv_chem_potential_water_t_exact,double,sa; t; p,double; double; double
+gsw_t_freezing,double,sa; p; saturation_fraction,double; double; double
+gsw_t_freezing_poly,double,sa; p; saturation_fraction,double; double; double
+gsw_t_from_ct,double,sa; ct; p,double; double; double
+gsw_t_from_pt0_ice,double,pt0_ice; p,double; double
+gsw_thermobaric,double,sa; ct; p,double; double; double
+gsw_z_from_p,double,p; lat,double; double
