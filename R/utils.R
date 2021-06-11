@@ -14,3 +14,13 @@ recycle_common <- function(...) {
 
   lapply(dots, rep_len, final_length)
 }
+
+san_dbl <- function(x, nm = "x") {
+  if (is.double(x)) {
+    x
+  } else if (is.integer(x)) {
+    as.numeric(x)
+  } else {
+    stop(sprintf("Can't convert `%s` to double", nm), call. = FALSE)
+  }
+}

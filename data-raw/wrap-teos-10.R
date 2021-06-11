@@ -90,7 +90,7 @@ fun_wrap_doubles_r <- function(name, arg_names, doc, ...) {
     "
 {{ doc }}
 {{ name }} <- function({{ paste(arg_names, collapse = ', ')}}) {
-  recycled <- recycle_common({{ paste(arg_names, collapse = ', ')}})
+  recycled <- recycle_common({{ paste0('san_dbl(', arg_names, ', nm = \"', arg_names, '\")', collapse = ', ')}})
   .Call(teos10_c_{{ name }}_wrap, {{ paste0('recycled[[', arg_indices , ']]', collapse = ', ')}})
 }
 "
@@ -179,6 +179,3 @@ wrapped <- impl_all %>%
     arg_types = map_chr(arg_types, paste, collapse = "; "),
   ) %>%
   write_csv("data-raw/wrapped-functions.csv")
-
-# regenerate the C manifest
-source("data-raw/make-callentries.R")

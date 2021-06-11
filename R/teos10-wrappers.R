@@ -12,7 +12,7 @@
 #'
 #' @export
 gsw_adiabatic_lapse_rate_from_ct <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_adiabatic_lapse_rate_from_ct_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -27,7 +27,7 @@ gsw_adiabatic_lapse_rate_from_ct <- function(sa, ct, p) {
 #'
 #' @export
 gsw_adiabatic_lapse_rate_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_adiabatic_lapse_rate_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -45,7 +45,7 @@ gsw_adiabatic_lapse_rate_ice <- function(t, p) {
 #'
 #' @export
 gsw_alpha <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_alpha_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -65,7 +65,7 @@ gsw_alpha <- function(sa, ct, p) {
 #'
 #' @export
 gsw_alpha_on_beta <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_alpha_on_beta_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -82,7 +82,7 @@ gsw_alpha_on_beta <- function(sa, ct, p) {
 #'
 #' @export
 gsw_alpha_wrt_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_alpha_wrt_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -98,7 +98,7 @@ gsw_alpha_wrt_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_alpha_wrt_t_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_alpha_wrt_t_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -117,7 +117,7 @@ gsw_alpha_wrt_t_ice <- function(t, p) {
 #'
 #' @export
 gsw_beta <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_beta_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -134,7 +134,7 @@ gsw_beta <- function(sa, ct, p) {
 #'
 #' @export
 gsw_beta_const_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_beta_const_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -167,7 +167,7 @@ gsw_beta_const_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_c_from_sp <- function(sp, t, p) {
-  recycled <- recycle_common(sp, t, p)
+  recycled <- recycle_common(san_dbl(sp, nm = "sp"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_c_from_sp_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -186,7 +186,7 @@ gsw_c_from_sp <- function(sp, t, p) {
 #'
 #' @export
 gsw_cabbeling <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_cabbeling_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -202,7 +202,7 @@ gsw_cabbeling <- function(sa, ct, p) {
 #'
 #' @export
 gsw_chem_potential_water_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_chem_potential_water_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -218,7 +218,7 @@ gsw_chem_potential_water_ice <- function(t, p) {
 #'
 #' @export
 gsw_chem_potential_water_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_chem_potential_water_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -233,7 +233,7 @@ gsw_chem_potential_water_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_cp_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_cp_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -249,7 +249,7 @@ gsw_cp_ice <- function(t, p) {
 #'
 #' @export
 gsw_cp_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_cp_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -272,7 +272,7 @@ gsw_cp_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_ct_freezing <- function(sa, p, saturation_fraction) {
-  recycled <- recycle_common(sa, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_ct_freezing_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -294,7 +294,7 @@ gsw_ct_freezing <- function(sa, p, saturation_fraction) {
 #'
 #' @export
 gsw_ct_freezing_poly <- function(sa, p, saturation_fraction) {
-  recycled <- recycle_common(sa, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_ct_freezing_poly_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -311,7 +311,7 @@ gsw_ct_freezing_poly <- function(sa, p, saturation_fraction) {
 #'
 #' @export
 gsw_ct_from_enthalpy <- function(sa, h, p) {
-  recycled <- recycle_common(sa, h, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(h, nm = "h"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_ct_from_enthalpy_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -328,7 +328,7 @@ gsw_ct_from_enthalpy <- function(sa, h, p) {
 #'
 #' @export
 gsw_ct_from_enthalpy_exact <- function(sa, h, p) {
-  recycled <- recycle_common(sa, h, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(h, nm = "h"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_ct_from_enthalpy_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -343,7 +343,7 @@ gsw_ct_from_enthalpy_exact <- function(sa, h, p) {
 #'
 #' @export
 gsw_ct_from_entropy <- function(sa, entropy) {
-  recycled <- recycle_common(sa, entropy)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(entropy, nm = "entropy"))
   .Call(teos10_c_gsw_ct_from_entropy_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -358,7 +358,7 @@ gsw_ct_from_entropy <- function(sa, entropy) {
 #'
 #' @export
 gsw_ct_from_pt <- function(sa, pt) {
-  recycled <- recycle_common(sa, pt)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(pt, nm = "pt"))
   .Call(teos10_c_gsw_ct_from_pt_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -374,7 +374,7 @@ gsw_ct_from_pt <- function(sa, pt) {
 #'
 #' @export
 gsw_ct_from_t <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_ct_from_t_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -392,7 +392,7 @@ gsw_ct_from_t <- function(sa, t, p) {
 #'
 #' @export
 gsw_ct_maxdensity <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_ct_maxdensity_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -408,7 +408,7 @@ gsw_ct_maxdensity <- function(sa, p) {
 #'
 #' @export
 gsw_deltasa_atlas <- function(p, lon, lat) {
-  recycled <- recycle_common(p, lon, lat)
+  recycled <- recycle_common(san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_deltasa_atlas_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -425,7 +425,7 @@ gsw_deltasa_atlas <- function(p, lon, lat) {
 #'
 #' @export
 gsw_deltasa_from_sp <- function(sp, p, lon, lat) {
-  recycled <- recycle_common(sp, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sp, nm = "sp"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_deltasa_from_sp_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -444,7 +444,7 @@ gsw_deltasa_from_sp <- function(sp, p, lon, lat) {
 #'
 #' @export
 gsw_dilution_coefficient_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_dilution_coefficient_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -463,7 +463,7 @@ gsw_dilution_coefficient_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_dynamic_enthalpy <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_dynamic_enthalpy_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -481,7 +481,7 @@ gsw_dynamic_enthalpy <- function(sa, ct, p) {
 #'
 #' @export
 gsw_enthalpy <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_enthalpy_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -499,7 +499,7 @@ gsw_enthalpy <- function(sa, ct, p) {
 #'
 #' @export
 gsw_enthalpy_ct_exact <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_enthalpy_ct_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -522,7 +522,7 @@ gsw_enthalpy_ct_exact <- function(sa, ct, p) {
 #'
 #' @export
 gsw_enthalpy_diff <- function(sa, ct, p_shallow, p_deep) {
-  recycled <- recycle_common(sa, ct, p_shallow, p_deep)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p_shallow, nm = "p_shallow"), san_dbl(p_deep, nm = "p_deep"))
   .Call(teos10_c_gsw_enthalpy_diff_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -537,7 +537,7 @@ gsw_enthalpy_diff <- function(sa, ct, p_shallow, p_deep) {
 #'
 #' @export
 gsw_enthalpy_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_enthalpy_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -555,7 +555,7 @@ gsw_enthalpy_ice <- function(t, p) {
 #'
 #' @export
 gsw_enthalpy_sso_0 <- function(p) {
-  recycled <- recycle_common(p)
+  recycled <- recycle_common(san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_enthalpy_sso_0_wrap, recycled[[1]])
 }
 
@@ -571,7 +571,7 @@ gsw_enthalpy_sso_0 <- function(p) {
 #'
 #' @export
 gsw_enthalpy_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_enthalpy_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -586,7 +586,7 @@ gsw_enthalpy_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_entropy_from_ct <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_entropy_from_ct_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -601,7 +601,7 @@ gsw_entropy_from_ct <- function(sa, ct) {
 #'
 #' @export
 gsw_entropy_from_pt <- function(sa, pt) {
-  recycled <- recycle_common(sa, pt)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(pt, nm = "pt"))
   .Call(teos10_c_gsw_entropy_from_pt_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -617,7 +617,7 @@ gsw_entropy_from_pt <- function(sa, pt) {
 #'
 #' @export
 gsw_entropy_from_t <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_entropy_from_t_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -632,7 +632,7 @@ gsw_entropy_from_t <- function(sa, t, p) {
 #'
 #' @export
 gsw_entropy_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_entropy_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -648,7 +648,7 @@ gsw_entropy_ice <- function(t, p) {
 #'
 #' @export
 gsw_entropy_part <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_entropy_part_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -663,7 +663,7 @@ gsw_entropy_part <- function(sa, t, p) {
 #'
 #' @export
 gsw_entropy_part_zerop <- function(sa, pt0) {
-  recycled <- recycle_common(sa, pt0)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(pt0, nm = "pt0"))
   .Call(teos10_c_gsw_entropy_part_zerop_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -679,7 +679,7 @@ gsw_entropy_part_zerop <- function(sa, pt0) {
 #'
 #' @export
 gsw_fdelta <- function(p, lon, lat) {
-  recycled <- recycle_common(p, lon, lat)
+  recycled <- recycle_common(san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_fdelta_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -695,7 +695,7 @@ gsw_fdelta <- function(p, lon, lat) {
 #'
 #' @export
 gsw_gibbs_ice_part_t <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_gibbs_ice_part_t_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -710,7 +710,7 @@ gsw_gibbs_ice_part_t <- function(t, p) {
 #'
 #' @export
 gsw_gibbs_ice_pt0 <- function(pt0) {
-  recycled <- recycle_common(pt0)
+  recycled <- recycle_common(san_dbl(pt0, nm = "pt0"))
   .Call(teos10_c_gsw_gibbs_ice_pt0_wrap, recycled[[1]])
 }
 
@@ -726,7 +726,7 @@ gsw_gibbs_ice_pt0 <- function(pt0) {
 #'
 #' @export
 gsw_gibbs_ice_pt0_pt0 <- function(pt0) {
-  recycled <- recycle_common(pt0)
+  recycled <- recycle_common(san_dbl(pt0, nm = "pt0"))
   .Call(teos10_c_gsw_gibbs_ice_pt0_pt0_wrap, recycled[[1]])
 }
 
@@ -741,7 +741,7 @@ gsw_gibbs_ice_pt0_pt0 <- function(pt0) {
 #'
 #' @export
 gsw_gibbs_pt0_pt0 <- function(sa, pt0) {
-  recycled <- recycle_common(sa, pt0)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(pt0, nm = "pt0"))
   .Call(teos10_c_gsw_gibbs_pt0_pt0_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -757,7 +757,7 @@ gsw_gibbs_pt0_pt0 <- function(sa, pt0) {
 #'
 #' @export
 gsw_grav <- function(lat, p) {
-  recycled <- recycle_common(lat, p)
+  recycled <- recycle_common(san_dbl(lat, nm = "lat"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_grav_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -772,7 +772,7 @@ gsw_grav <- function(lat, p) {
 #'
 #' @export
 gsw_helmholtz_energy_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_helmholtz_energy_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -791,7 +791,7 @@ gsw_helmholtz_energy_ice <- function(t, p) {
 #'
 #' @export
 gsw_hill_ratio_at_sp2 <- function(t) {
-  recycled <- recycle_common(t)
+  recycled <- recycle_common(san_dbl(t, nm = "t"))
   .Call(teos10_c_gsw_hill_ratio_at_sp2_wrap, recycled[[1]])
 }
 
@@ -807,7 +807,7 @@ gsw_hill_ratio_at_sp2 <- function(t) {
 #'
 #' @export
 gsw_internal_energy <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_internal_energy_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -822,7 +822,7 @@ gsw_internal_energy <- function(sa, ct, p) {
 #'
 #' @export
 gsw_internal_energy_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_internal_energy_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -841,7 +841,7 @@ gsw_internal_energy_ice <- function(t, p) {
 #'
 #' @export
 gsw_kappa <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_kappa_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -858,7 +858,7 @@ gsw_kappa <- function(sa, ct, p) {
 #'
 #' @export
 gsw_kappa_const_t_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_kappa_const_t_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -873,7 +873,7 @@ gsw_kappa_const_t_ice <- function(t, p) {
 #'
 #' @export
 gsw_kappa_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_kappa_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -889,7 +889,7 @@ gsw_kappa_ice <- function(t, p) {
 #'
 #' @export
 gsw_kappa_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_kappa_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -904,7 +904,7 @@ gsw_kappa_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_latentheat_evap_ct <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_latentheat_evap_ct_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -919,7 +919,7 @@ gsw_latentheat_evap_ct <- function(sa, ct) {
 #'
 #' @export
 gsw_latentheat_evap_t <- function(sa, t) {
-  recycled <- recycle_common(sa, t)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"))
   .Call(teos10_c_gsw_latentheat_evap_t_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -934,7 +934,7 @@ gsw_latentheat_evap_t <- function(sa, t) {
 #'
 #' @export
 gsw_latentheat_melting <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_latentheat_melting_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -960,7 +960,7 @@ gsw_latentheat_melting <- function(sa, p) {
 #'
 #' @export
 gsw_melting_ice_equilibrium_sa_ct_ratio <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_melting_ice_equilibrium_sa_ct_ratio_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -986,7 +986,7 @@ gsw_melting_ice_equilibrium_sa_ct_ratio <- function(sa, p) {
 #'
 #' @export
 gsw_melting_ice_equilibrium_sa_ct_ratio_poly <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_melting_ice_equilibrium_sa_ct_ratio_poly_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1009,7 +1009,7 @@ gsw_melting_ice_equilibrium_sa_ct_ratio_poly <- function(sa, p) {
 #'
 #' @export
 gsw_melting_ice_sa_ct_ratio <- function(sa, ct, p, t_ih) {
-  recycled <- recycle_common(sa, ct, p, t_ih)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"), san_dbl(t_ih, nm = "t_ih"))
   .Call(teos10_c_gsw_melting_ice_sa_ct_ratio_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1032,7 +1032,7 @@ gsw_melting_ice_sa_ct_ratio <- function(sa, ct, p, t_ih) {
 #'
 #' @export
 gsw_melting_ice_sa_ct_ratio_poly <- function(sa, ct, p, t_ih) {
-  recycled <- recycle_common(sa, ct, p, t_ih)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"), san_dbl(t_ih, nm = "t_ih"))
   .Call(teos10_c_gsw_melting_ice_sa_ct_ratio_poly_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1063,7 +1063,7 @@ gsw_melting_ice_sa_ct_ratio_poly <- function(sa, ct, p, t_ih) {
 #'
 #' @export
 gsw_melting_seaice_equilibrium_sa_ct_ratio <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_melting_seaice_equilibrium_sa_ct_ratio_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1094,7 +1094,7 @@ gsw_melting_seaice_equilibrium_sa_ct_ratio <- function(sa, p) {
 #'
 #' @export
 gsw_melting_seaice_equilibrium_sa_ct_ratio_poly <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_melting_seaice_equilibrium_sa_ct_ratio_poly_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1131,7 +1131,7 @@ gsw_melting_seaice_equilibrium_sa_ct_ratio_poly <- function(sa, p) {
 #'
 #' @export
 gsw_melting_seaice_sa_ct_ratio <- function(sa, ct, p, sa_seaice, t_seaice) {
-  recycled <- recycle_common(sa, ct, p, sa_seaice, t_seaice)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"), san_dbl(sa_seaice, nm = "sa_seaice"), san_dbl(t_seaice, nm = "t_seaice"))
   .Call(teos10_c_gsw_melting_seaice_sa_ct_ratio_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]], recycled[[5]])
 }
 
@@ -1168,7 +1168,7 @@ gsw_melting_seaice_sa_ct_ratio <- function(sa, ct, p, sa_seaice, t_seaice) {
 #'
 #' @export
 gsw_melting_seaice_sa_ct_ratio_poly <- function(sa, ct, p, sa_seaice, t_seaice) {
-  recycled <- recycle_common(sa, ct, p, sa_seaice, t_seaice)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"), san_dbl(sa_seaice, nm = "sa_seaice"), san_dbl(t_seaice, nm = "t_seaice"))
   .Call(teos10_c_gsw_melting_seaice_sa_ct_ratio_poly_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]], recycled[[5]])
 }
 
@@ -1183,7 +1183,7 @@ gsw_melting_seaice_sa_ct_ratio_poly <- function(sa, ct, p, sa_seaice, t_seaice) 
 #'
 #' @export
 gsw_p_from_z <- function(z, lat) {
-  recycled <- recycle_common(z, lat)
+  recycled <- recycle_common(san_dbl(z, nm = "z"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_p_from_z_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1198,7 +1198,7 @@ gsw_p_from_z <- function(z, lat) {
 #'
 #' @export
 gsw_pot_enthalpy_from_pt_ice <- function(pt0_ice) {
-  recycled <- recycle_common(pt0_ice)
+  recycled <- recycle_common(san_dbl(pt0_ice, nm = "pt0_ice"))
   .Call(teos10_c_gsw_pot_enthalpy_from_pt_ice_wrap, recycled[[1]])
 }
 
@@ -1215,7 +1215,7 @@ gsw_pot_enthalpy_from_pt_ice <- function(pt0_ice) {
 #'
 #' @export
 gsw_pot_enthalpy_from_pt_ice_poly <- function(pt0_ice) {
-  recycled <- recycle_common(pt0_ice)
+  recycled <- recycle_common(san_dbl(pt0_ice, nm = "pt0_ice"))
   .Call(teos10_c_gsw_pot_enthalpy_from_pt_ice_poly_wrap, recycled[[1]])
 }
 
@@ -1230,7 +1230,7 @@ gsw_pot_enthalpy_from_pt_ice_poly <- function(pt0_ice) {
 #'
 #' @export
 gsw_pot_enthalpy_ice_freezing <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_pot_enthalpy_ice_freezing_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1252,7 +1252,7 @@ gsw_pot_enthalpy_ice_freezing <- function(sa, p) {
 #'
 #' @export
 gsw_pot_enthalpy_ice_freezing_poly <- function(sa, p) {
-  recycled <- recycle_common(sa, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_pot_enthalpy_ice_freezing_poly_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1269,7 +1269,7 @@ gsw_pot_enthalpy_ice_freezing_poly <- function(sa, p) {
 #'
 #' @export
 gsw_pot_rho_t_exact <- function(sa, t, p, p_ref) {
-  recycled <- recycle_common(sa, t, p, p_ref)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"), san_dbl(p_ref, nm = "p_ref"))
   .Call(teos10_c_gsw_pot_rho_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1284,7 +1284,7 @@ gsw_pot_rho_t_exact <- function(sa, t, p, p_ref) {
 #'
 #' @export
 gsw_pressure_coefficient_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_pressure_coefficient_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1306,7 +1306,7 @@ gsw_pressure_coefficient_ice <- function(t, p) {
 #'
 #' @export
 gsw_pressure_freezing_ct <- function(sa, ct, saturation_fraction) {
-  recycled <- recycle_common(sa, ct, saturation_fraction)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_pressure_freezing_ct_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1321,7 +1321,7 @@ gsw_pressure_freezing_ct <- function(sa, ct, saturation_fraction) {
 #'
 #' @export
 gsw_pt_from_ct <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_pt_from_ct_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1337,7 +1337,7 @@ gsw_pt_from_ct <- function(sa, ct) {
 #'
 #' @export
 gsw_pt_from_entropy <- function(sa, entropy) {
-  recycled <- recycle_common(sa, entropy)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(entropy, nm = "entropy"))
   .Call(teos10_c_gsw_pt_from_entropy_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1353,7 +1353,7 @@ gsw_pt_from_entropy <- function(sa, entropy) {
 #'
 #' @export
 gsw_pt_from_pot_enthalpy_ice <- function(pot_enthalpy_ice) {
-  recycled <- recycle_common(pot_enthalpy_ice)
+  recycled <- recycle_common(san_dbl(pot_enthalpy_ice, nm = "pot_enthalpy_ice"))
   .Call(teos10_c_gsw_pt_from_pot_enthalpy_ice_wrap, recycled[[1]])
 }
 
@@ -1370,7 +1370,7 @@ gsw_pt_from_pot_enthalpy_ice <- function(pot_enthalpy_ice) {
 #'
 #' @export
 gsw_pt_from_pot_enthalpy_ice_poly <- function(pot_enthalpy_ice) {
-  recycled <- recycle_common(pot_enthalpy_ice)
+  recycled <- recycle_common(san_dbl(pot_enthalpy_ice, nm = "pot_enthalpy_ice"))
   .Call(teos10_c_gsw_pt_from_pot_enthalpy_ice_poly_wrap, recycled[[1]])
 }
 
@@ -1386,7 +1386,7 @@ gsw_pt_from_pot_enthalpy_ice_poly <- function(pot_enthalpy_ice) {
 #'
 #' @export
 gsw_pt_from_pot_enthalpy_ice_poly_dh <- function(pot_enthalpy_ice) {
-  recycled <- recycle_common(pot_enthalpy_ice)
+  recycled <- recycle_common(san_dbl(pot_enthalpy_ice, nm = "pot_enthalpy_ice"))
   .Call(teos10_c_gsw_pt_from_pot_enthalpy_ice_poly_dh_wrap, recycled[[1]])
 }
 
@@ -1403,7 +1403,7 @@ gsw_pt_from_pot_enthalpy_ice_poly_dh <- function(pot_enthalpy_ice) {
 #'
 #' @export
 gsw_pt_from_t <- function(sa, t, p, p_ref) {
-  recycled <- recycle_common(sa, t, p, p_ref)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"), san_dbl(p_ref, nm = "p_ref"))
   .Call(teos10_c_gsw_pt_from_t_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1422,7 +1422,7 @@ gsw_pt_from_t <- function(sa, t, p, p_ref) {
 #'
 #' @export
 gsw_pt_from_t_ice <- function(t, p, p_ref) {
-  recycled <- recycle_common(t, p, p_ref)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"), san_dbl(p_ref, nm = "p_ref"))
   .Call(teos10_c_gsw_pt_from_t_ice_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1437,7 +1437,7 @@ gsw_pt_from_t_ice <- function(t, p, p_ref) {
 #'
 #' @export
 gsw_pt0_cold_ice_poly <- function(pot_enthalpy_ice) {
-  recycled <- recycle_common(pot_enthalpy_ice)
+  recycled <- recycle_common(san_dbl(pot_enthalpy_ice, nm = "pot_enthalpy_ice"))
   .Call(teos10_c_gsw_pt0_cold_ice_poly_wrap, recycled[[1]])
 }
 
@@ -1453,7 +1453,7 @@ gsw_pt0_cold_ice_poly <- function(pot_enthalpy_ice) {
 #'
 #' @export
 gsw_pt0_from_t <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_pt0_from_t_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1469,7 +1469,7 @@ gsw_pt0_from_t <- function(sa, t, p) {
 #'
 #' @export
 gsw_pt0_from_t_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_pt0_from_t_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1487,7 +1487,7 @@ gsw_pt0_from_t_ice <- function(t, p) {
 #'
 #' @export
 gsw_rho <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_rho_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1504,7 +1504,7 @@ gsw_rho <- function(sa, ct, p) {
 #'
 #' @export
 gsw_rho_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_rho_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1521,7 +1521,7 @@ gsw_rho_ice <- function(t, p) {
 #'
 #' @export
 gsw_rho_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_rho_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1543,7 +1543,7 @@ gsw_rho_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_sa_freezing_from_ct <- function(ct, p, saturation_fraction) {
-  recycled <- recycle_common(ct, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_sa_freezing_from_ct_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1564,7 +1564,7 @@ gsw_sa_freezing_from_ct <- function(ct, p, saturation_fraction) {
 #'
 #' @export
 gsw_sa_freezing_from_ct_poly <- function(ct, p, saturation_fraction) {
-  recycled <- recycle_common(ct, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_sa_freezing_from_ct_poly_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1585,7 +1585,7 @@ gsw_sa_freezing_from_ct_poly <- function(ct, p, saturation_fraction) {
 #'
 #' @export
 gsw_sa_freezing_from_t <- function(t, p, saturation_fraction) {
-  recycled <- recycle_common(t, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_sa_freezing_from_t_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1606,7 +1606,7 @@ gsw_sa_freezing_from_t <- function(t, p, saturation_fraction) {
 #'
 #' @export
 gsw_sa_freezing_from_t_poly <- function(t, p, saturation_fraction) {
-  recycled <- recycle_common(t, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_sa_freezing_from_t_poly_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1623,7 +1623,7 @@ gsw_sa_freezing_from_t_poly <- function(t, p, saturation_fraction) {
 #'
 #' @export
 gsw_sa_from_rho <- function(rho, ct, p) {
-  recycled <- recycle_common(rho, ct, p)
+  recycled <- recycle_common(san_dbl(rho, nm = "rho"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_sa_from_rho_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1640,7 +1640,7 @@ gsw_sa_from_rho <- function(rho, ct, p) {
 #'
 #' @export
 gsw_sa_from_sp <- function(sp, p, lon, lat) {
-  recycled <- recycle_common(sp, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sp, nm = "sp"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sa_from_sp_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1657,7 +1657,7 @@ gsw_sa_from_sp <- function(sp, p, lon, lat) {
 #'
 #' @export
 gsw_sa_from_sp_baltic <- function(sp, lon, lat) {
-  recycled <- recycle_common(sp, lon, lat)
+  recycled <- recycle_common(san_dbl(sp, nm = "sp"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sa_from_sp_baltic_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1674,7 +1674,7 @@ gsw_sa_from_sp_baltic <- function(sp, lon, lat) {
 #'
 #' @export
 gsw_sa_from_sstar <- function(sstar, p, lon, lat) {
-  recycled <- recycle_common(sstar, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sstar, nm = "sstar"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sa_from_sstar_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1693,7 +1693,7 @@ gsw_sa_from_sstar <- function(sstar, p, lon, lat) {
 #'
 #' @export
 gsw_saar <- function(p, lon, lat) {
-  recycled <- recycle_common(p, lon, lat)
+  recycled <- recycle_common(san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_saar_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1712,7 +1712,7 @@ gsw_saar <- function(p, lon, lat) {
 #'
 #' @export
 gsw_sigma0 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_sigma0_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1729,7 +1729,7 @@ gsw_sigma0 <- function(sa, ct) {
 #'
 #' @export
 gsw_sigma1 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_sigma1_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1746,7 +1746,7 @@ gsw_sigma1 <- function(sa, ct) {
 #'
 #' @export
 gsw_sigma2 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_sigma2_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1763,7 +1763,7 @@ gsw_sigma2 <- function(sa, ct) {
 #'
 #' @export
 gsw_sigma3 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_sigma3_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1780,7 +1780,7 @@ gsw_sigma3 <- function(sa, ct) {
 #'
 #' @export
 gsw_sigma4 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_sigma4_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1799,7 +1799,7 @@ gsw_sigma4 <- function(sa, ct) {
 #'
 #' @export
 gsw_sound_speed <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_sound_speed_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1814,7 +1814,7 @@ gsw_sound_speed <- function(sa, ct, p) {
 #'
 #' @export
 gsw_sound_speed_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_sound_speed_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -1830,7 +1830,7 @@ gsw_sound_speed_ice <- function(t, p) {
 #'
 #' @export
 gsw_sound_speed_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_sound_speed_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1854,7 +1854,7 @@ gsw_sound_speed_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_sp_from_c <- function(c, t, p) {
-  recycled <- recycle_common(c, t, p)
+  recycled <- recycle_common(san_dbl(c, nm = "c"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_sp_from_c_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1871,7 +1871,7 @@ gsw_sp_from_c <- function(c, t, p) {
 #'
 #' @export
 gsw_sp_from_sa <- function(sa, p, lon, lat) {
-  recycled <- recycle_common(sa, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sp_from_sa_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1888,7 +1888,7 @@ gsw_sp_from_sa <- function(sa, p, lon, lat) {
 #'
 #' @export
 gsw_sp_from_sa_baltic <- function(sa, lon, lat) {
-  recycled <- recycle_common(sa, lon, lat)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sp_from_sa_baltic_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1902,7 +1902,7 @@ gsw_sp_from_sa_baltic <- function(sa, lon, lat) {
 #'
 #' @export
 gsw_sp_from_sk <- function(sk) {
-  recycled <- recycle_common(sk)
+  recycled <- recycle_common(san_dbl(sk, nm = "sk"))
   .Call(teos10_c_gsw_sp_from_sk_wrap, recycled[[1]])
 }
 
@@ -1916,7 +1916,7 @@ gsw_sp_from_sk <- function(sk) {
 #'
 #' @export
 gsw_sp_from_sr <- function(sr) {
-  recycled <- recycle_common(sr)
+  recycled <- recycle_common(san_dbl(sr, nm = "sr"))
   .Call(teos10_c_gsw_sp_from_sr_wrap, recycled[[1]])
 }
 
@@ -1933,7 +1933,7 @@ gsw_sp_from_sr <- function(sr) {
 #'
 #' @export
 gsw_sp_from_sstar <- function(sstar, p, lon, lat) {
-  recycled <- recycle_common(sstar, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sstar, nm = "sstar"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sp_from_sstar_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -1951,7 +1951,7 @@ gsw_sp_from_sstar <- function(sstar, p, lon, lat) {
 #'
 #' @export
 gsw_specvol <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_specvol_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1967,7 +1967,7 @@ gsw_specvol <- function(sa, ct, p) {
 #'
 #' @export
 gsw_specvol_anom_standard <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_specvol_anom_standard_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -1982,7 +1982,7 @@ gsw_specvol_anom_standard <- function(sa, ct, p) {
 #'
 #' @export
 gsw_specvol_ice <- function(t, p) {
-  recycled <- recycle_common(t, p)
+  recycled <- recycle_common(san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_specvol_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -2000,7 +2000,7 @@ gsw_specvol_ice <- function(t, p) {
 #'
 #' @export
 gsw_specvol_sso_0 <- function(p) {
-  recycled <- recycle_common(p)
+  recycled <- recycle_common(san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_specvol_sso_0_wrap, recycled[[1]])
 }
 
@@ -2016,7 +2016,7 @@ gsw_specvol_sso_0 <- function(p) {
 #'
 #' @export
 gsw_specvol_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_specvol_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -2035,7 +2035,7 @@ gsw_specvol_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_spiciness0 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_spiciness0_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -2054,7 +2054,7 @@ gsw_spiciness0 <- function(sa, ct) {
 #'
 #' @export
 gsw_spiciness1 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_spiciness1_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -2073,7 +2073,7 @@ gsw_spiciness1 <- function(sa, ct) {
 #'
 #' @export
 gsw_spiciness2 <- function(sa, ct) {
-  recycled <- recycle_common(sa, ct)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"))
   .Call(teos10_c_gsw_spiciness2_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -2087,7 +2087,7 @@ gsw_spiciness2 <- function(sa, ct) {
 #'
 #' @export
 gsw_sr_from_sp <- function(sp) {
-  recycled <- recycle_common(sp)
+  recycled <- recycle_common(san_dbl(sp, nm = "sp"))
   .Call(teos10_c_gsw_sr_from_sp_wrap, recycled[[1]])
 }
 
@@ -2104,7 +2104,7 @@ gsw_sr_from_sp <- function(sp) {
 #'
 #' @export
 gsw_sstar_from_sa <- function(sa, p, lon, lat) {
-  recycled <- recycle_common(sa, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sstar_from_sa_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -2121,7 +2121,7 @@ gsw_sstar_from_sa <- function(sa, p, lon, lat) {
 #'
 #' @export
 gsw_sstar_from_sp <- function(sp, p, lon, lat) {
-  recycled <- recycle_common(sp, p, lon, lat)
+  recycled <- recycle_common(san_dbl(sp, nm = "sp"), san_dbl(p, nm = "p"), san_dbl(lon, nm = "lon"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_sstar_from_sp_wrap, recycled[[1]], recycled[[2]], recycled[[3]], recycled[[4]])
 }
 
@@ -2138,7 +2138,7 @@ gsw_sstar_from_sp <- function(sp, p, lon, lat) {
 #'
 #' @export
 gsw_t_deriv_chem_potential_water_t_exact <- function(sa, t, p) {
-  recycled <- recycle_common(sa, t, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(t, nm = "t"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_t_deriv_chem_potential_water_t_exact_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -2154,7 +2154,7 @@ gsw_t_deriv_chem_potential_water_t_exact <- function(sa, t, p) {
 #'
 #' @export
 gsw_t_freezing <- function(sa, p, saturation_fraction) {
-  recycled <- recycle_common(sa, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_t_freezing_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -2171,7 +2171,7 @@ gsw_t_freezing <- function(sa, p, saturation_fraction) {
 #'
 #' @export
 gsw_t_freezing_poly <- function(sa, p, saturation_fraction) {
-  recycled <- recycle_common(sa, p, saturation_fraction)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(p, nm = "p"), san_dbl(saturation_fraction, nm = "saturation_fraction"))
   .Call(teos10_c_gsw_t_freezing_poly_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -2187,7 +2187,7 @@ gsw_t_freezing_poly <- function(sa, p, saturation_fraction) {
 #'
 #' @export
 gsw_t_from_ct <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_t_from_ct_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -2204,7 +2204,7 @@ gsw_t_from_ct <- function(sa, ct, p) {
 #'
 #' @export
 gsw_t_from_pt0_ice <- function(pt0_ice, p) {
-  recycled <- recycle_common(pt0_ice, p)
+  recycled <- recycle_common(san_dbl(pt0_ice, nm = "pt0_ice"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_t_from_pt0_ice_wrap, recycled[[1]], recycled[[2]])
 }
 
@@ -2223,7 +2223,7 @@ gsw_t_from_pt0_ice <- function(pt0_ice, p) {
 #'
 #' @export
 gsw_thermobaric <- function(sa, ct, p) {
-  recycled <- recycle_common(sa, ct, p)
+  recycled <- recycle_common(san_dbl(sa, nm = "sa"), san_dbl(ct, nm = "ct"), san_dbl(p, nm = "p"))
   .Call(teos10_c_gsw_thermobaric_wrap, recycled[[1]], recycled[[2]], recycled[[3]])
 }
 
@@ -2238,6 +2238,6 @@ gsw_thermobaric <- function(sa, ct, p) {
 #'
 #' @export
 gsw_z_from_p <- function(p, lat) {
-  recycled <- recycle_common(p, lat)
+  recycled <- recycle_common(san_dbl(p, nm = "p"), san_dbl(lat, nm = "lat"))
   .Call(teos10_c_gsw_z_from_p_wrap, recycled[[1]], recycled[[2]])
 }
